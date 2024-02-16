@@ -1,4 +1,13 @@
-def mensagem_erro():
+'''
+    Módulo de utilidades
+
+    Este módulo contém funções utilitárias para interação com o usuário.
+
+    Funções:
+    mensagem_erro() ->
+'''
+
+def mensagem_erro() -> None:
     print('Erro! Digite uma resposta válida')
 
 
@@ -6,7 +15,7 @@ def continuar(pergunta='Gostaria de continuar?'):
     while True:
         try:
             r = str(input(f'{pergunta} [s/n]')).lower().strip()[0]
-        except:
+        except (ValueError, TypeError):
             mensagem_erro()
             continue
         else:
@@ -36,4 +45,3 @@ def strings():
             continue
         else:
             return s
-

@@ -1,4 +1,4 @@
-from Biblioteca import numeros_inteiros, continuar
+from utils import numeros_inteiros, continuar
 def soma_numeros_unicos(lista):
     numeros_unicos = set()
     for n in lista:

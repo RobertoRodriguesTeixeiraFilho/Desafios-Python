@@ -1,4 +1,4 @@
-from Biblioteca import numeros_inteiros, continuar
+from utils import numeros_inteiros, continuar
 
 
 def flatten(lista):

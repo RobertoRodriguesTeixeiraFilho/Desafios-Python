@@ -1,4 +1,4 @@
-from Biblioteca import strings
+from utils import strings
 
 
 def is_balanced(primeiro, segundo):
