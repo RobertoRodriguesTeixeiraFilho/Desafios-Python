@@ -5,11 +5,13 @@
 """
 
 
-def mensagem_erro() -> None:
+def mensagem_erro(msg='Digite uma resposta válida') -> None:
     """
-    Mostrará uma mensagem de erro ao usúario
+    Informa uma mensagem de erro por f'Erro! {msg}'
+    :param msg: padrão será 'Digite uma resposta válida'
+    :return: sem retorno
     """
-    print('Erro! Digite uma RESPOSTA válida')
+    print(f'Erro! {msg}')
 
 
 def continuar(pergunta='Gostaria de continuar?') -> str:
