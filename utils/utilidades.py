@@ -28,10 +28,10 @@ def continuar(pergunta='Gostaria de continuar?') -> str:
             mensagem_erro()
             continue
         else:
-            if r == 'n' or r == 's':
+            if r != '' and r in ('n', 's'):
                 return r
-            else:
-                mensagem_erro()
+            # Se o if não for seguido, não haverá retorno, portanto:
+            mensagem_erro()
 
 
 class PerguntarSobre:
@@ -48,17 +48,17 @@ class PerguntarSobre:
     @staticmethod
     def numeros_inteiros() -> int:
         """
-        Pergunta ao usúario uma PALAVRA em
-        :return:
+        Pergunta ao usúario um número inteiro.
+        Valores não inteiro seriam coomo: 1.5, ², strings, etc.
+        :return: o valor inteiro informado pelo usúario
         """
         while True:
             try:
                 n = int(input('Digite um número inteiro: '))
+                return n
             except (ValueError, TypeError):
                 mensagem_erro()
                 continue
-            else:
-                return n
 
     @staticmethod
     def strings() -> str:
@@ -69,9 +69,8 @@ class PerguntarSobre:
         """
         while True:
             try:
-                s = str(input('Digite uma PALAVRA (string): '))
+                s = input('Digite uma PALAVRA (string): ')
+                return s
             except (ValueError, TypeError):
                 mensagem_erro()
                 continue
-            else:
-                return s
